@@ -3,12 +3,7 @@ import { pathToFileURL } from 'node:url'
 import puppeteer, { type Browser, type Page } from 'puppeteer-core'
 import { DOM_WALKER_SCRIPT } from './dom-walker-script.generated'
 import { buildPptx } from './slide-builder'
-import type {
-  BgImageData,
-  ImageElement,
-  SlideData,
-  SlideElement,
-} from './types'
+import type { ImageElement, SlideData, SlideElement } from './types'
 
 export interface NativePptxOptions {
   /** Absolute path to the HTML file rendered by Marp CLI. */

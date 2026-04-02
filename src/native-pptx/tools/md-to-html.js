@@ -4,7 +4,7 @@
  * Usage: node src/native-pptx/tools/md-to-html.js <input.md> <output.html>
  */
 const { readFileSync, writeFileSync } = require('node:fs')
-const { resolve, dirname } = require('node:path')
+const { resolve } = require('node:path')
 
 const [, , inputArg, outputArg] = process.argv
 if (!inputArg || !outputArg) {

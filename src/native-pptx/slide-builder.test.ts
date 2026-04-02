@@ -1,16 +1,10 @@
-﻿import { fileURLToPath } from 'node:url'
-import {
+﻿import {
   buildPptx,
   placeElement,
   toTextProps,
   toListTextProps,
 } from './slide-builder'
-import type {
-  SlideData,
-  HeadingElement,
-  ListElement,
-  ImageElement,
-} from './types'
+import type { SlideData, ImageElement } from './types'
 
 // pptxgenjs creates a real object; we spy on its methods to verify calls.
 // We do NOT jest.mock('pptxgenjs') so that buildPptx() internally

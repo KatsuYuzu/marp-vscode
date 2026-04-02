@@ -1,5 +1,5 @@
-﻿import { extractSlides } from './dom-walker'
-const { JSDOM } = require('jsdom')
+﻿import { JSDOM } from 'jsdom'
+import { extractSlides } from './dom-walker'
 
 // ---------------------------------------------------------------------------
 // Manual JSDOM setup (jest-environment-jsdom hangs with jest 30 + node 22)
@@ -46,6 +46,7 @@ function mockRect(
     bottom: rect.top + rect.height,
     x: rect.left,
     y: rect.top,
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     toJSON() {},
   })
 }

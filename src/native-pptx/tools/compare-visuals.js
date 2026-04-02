@@ -11,7 +11,7 @@
  *   compare-NNN.png     — side-by-side diff image (HTML left | PPTX right)
  *   compare-report.md   — textual summary of diff areas
  */
-const { execSync, spawnSync } = require('node:child_process')
+const { spawnSync } = require('node:child_process')
 const fs = require('node:fs')
 const path = require('node:path')
 const { pathToFileURL } = require('node:url')
@@ -76,7 +76,6 @@ async function main() {
     ],
   })
 
-  let htmlSlideCount = 0
   try {
     const page = await browser.newPage()
     await page.setViewport({ width: WIDTH, height: HEIGHT })
@@ -109,7 +108,6 @@ async function main() {
     })
 
     console.log(`HTML slide count: ${slideCount}`)
-    htmlSlideCount = slideCount
 
     for (let i = 0; i < slideCount; i++) {
       // Navigate directly to slide N via URL hash — skips fragment animation offsets

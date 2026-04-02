@@ -754,7 +754,7 @@ export function extractSlides(root: ParentNode = document): SlideData[] {
               // coordinates).
               rasterize: true,
             })
-          } catch (_e) {
+          } catch {
             // Fall through to code block if SVG serialization fails
             const code = child.querySelector('code')
             const codeTarget = code ?? child
@@ -849,7 +849,7 @@ export function extractSlides(root: ParentNode = document): SlideData[] {
             naturalHeight: base.height,
             ...base,
           })
-        } catch (_e) {
+        } catch {
           // Skip if serialization fails
         }
       } else if (tag === 'header' || tag === 'footer') {
